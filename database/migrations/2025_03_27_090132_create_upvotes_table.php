@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('upvotes', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor('feature_id')
+            $table->foreignId('feature_id')
                 ->constrained('features')
                 ->cascadeOnDelete();
-            $table->foreignIdFor('user_id')
+            $table->foreignId('user_id')
                 ->constrained('users')
                 ->cascadeOnDelete();
             $table->boolean('upvote');
